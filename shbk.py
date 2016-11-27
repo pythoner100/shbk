@@ -1,13 +1,6 @@
 import tornado.ioloop
 import tornado.web
-
-class MainHandler(tornado.web.RequestHandler):
-    def get(self):
-        self.write("Hello, world")
-
-class HotHandler(tornado.web.RequestHandler):
-    def get(self):
-        self.write('hot handler ')
+from handler.index import MainHandler, HotHandler
 
 def make_app():
     return tornado.web.Application([
