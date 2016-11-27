@@ -1,6 +1,6 @@
 import tornado.ioloop
 import tornado.web
-from handler.index import MainHandler, HotHandler
+from handler.index import MainHandler, HotHandler,HourHandler
 import os
 
 def make_app():
@@ -11,10 +11,11 @@ def make_app():
     }
     return tornado.web.Application([
         (r"/", MainHandler),
-        (r"/hot", HotHandler)
+        (r"/hot", HotHandler),
+        (r"/hour",HourHandler)
     ], **settings)
 
 if __name__ == "__main__":
     app = make_app()
-    app.listen(5002)
+    app.listen(5000)
     tornado.ioloop.IOLoop.current().start()
