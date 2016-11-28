@@ -13,3 +13,7 @@ class HotHandler(tornado.web.RequestHandler):
 class HourHandler(tornado.web.RequestHandler):
     def get(self):
         self.render("hour.html")
+
+class ChartHandler(tornado.web.RequestHandler):
+    def get(self):
+        self.render("chart.html")
