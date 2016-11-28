@@ -12,5 +12,13 @@
 <a href="/chart">热图</a>
 <h1 style="background-color:blue;" >欢迎来到生活百科--首页</h1>
 
+
+{% for article in articles%}
+
+<div>{{article.id}}----{{article.content}}</div>
+
+{%end%}
+
+
 </body>
 </html>
