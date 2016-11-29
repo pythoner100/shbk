@@ -1,11 +1,15 @@
 import tornado.web
+import torndb
 
 
 class MainHandler(tornado.web.RequestHandler):
     def get(self):
         #self.write("Hello, world")
-        self.render('index.html')
-          
+        conn = torndb.Connection(host="localhost", user="root", password="11111111", database="shbk")
+        articles = conn.query("select * from article")
+        print articles
+        self.render('index.html', articles=articles)
+
 class HotHandler(tornado.web.RequestHandler):
     def get(self):
         #self.write('hot handler ') 
