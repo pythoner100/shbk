@@ -1,6 +1,6 @@
 import tornado.ioloop
 import tornado.web
-from handler.index import MainHandler, HotHandler,HourHandler,ChartHandler
+from handler.modular import MainHandler, HotHandler,HourHandler,ChartHandler,WordHandler
 import os
 
 def make_app():
@@ -13,7 +13,8 @@ def make_app():
         (r"/", MainHandler),
         (r"/hot", HotHandler),
         (r"/hour",HourHandler),
-        (r"/chart",ChartHandler)
+        (r"/chart",ChartHandler),
+        (r"/word",WordHandler)
     ], **settings)
 
 if __name__ == "__main__":
