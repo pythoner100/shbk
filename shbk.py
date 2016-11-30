@@ -6,7 +6,7 @@ import os
 def make_app():
     basedir = os.path.dirname(__file__)
     settings = {
-        'debug': True,
+#        'debug': True,
         'template_path': os.path.join(basedir, 'template')
     }
     return tornado.web.Application([
