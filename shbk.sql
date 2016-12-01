@@ -16,6 +16,19 @@ create table `article` (
   `content` varchar(200)
 );
 
+use shbk;
 
+create table `commenttable` (
+  `uesr` int unsigned not null primary key,
+  `opinion` varchar(255)
+);
+
+use shbk;
+
+create table `class`(
+  `id` int unsigned not null primary key,
+  `name` varchar(4),
+  `tel` varchar(11)
+);
 
 

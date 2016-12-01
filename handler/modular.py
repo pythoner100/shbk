@@ -1,3 +1,4 @@
+#coding:utf8
 import tornado.web
 import torndb
 
@@ -5,10 +6,10 @@ import torndb
 class MainHandler(tornado.web.RequestHandler):
     def get(self):
         #self.write("Hello, world")
-        conn = torndb.Connection(host="localhost", user="root", password="11111111", database="shbk")
-        articles = conn.query("select * from article")
-        print articles
-        self.render('index.html', articles=articles)
+        db = torndb.Connection(host="localhost", user="root", password="11111111", database="shbk")
+        classs = db.query("select * from class")
+        print classs
+        self.render('index.html',classs=classs)
 
 class HotHandler(tornado.web.RequestHandler):
     def get(self):
@@ -21,6 +22,9 @@ class HourHandler(tornado.web.RequestHandler):
     
 class ChartHandler(tornado.web.RequestHandler):
     def get(self):
+       # db = torndb.Connection(host="localhost",database="shbk", user="root", password="11111111")
+       # commenttables = db.query("select * from commenttable")
+       # print commenttables
         self.render("chart.html")
 
 class WordHandler(tornado.web.RequestHandler):
